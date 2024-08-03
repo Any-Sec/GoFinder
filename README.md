@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # GoFinder V0.1
 GoFinder is a **_CTF_ or _pentesting tool_** for directory enumeration. 
 

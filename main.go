@@ -8,7 +8,8 @@ import (
 
 func main(){
 	URLadd:= os.Args[1]
-	Lines := pkgs.FileReader("common.txt")
+	FilePath:= os.Args[2]
+	Lines := pkgs.FileReader(FilePath)
 	fmt.Println("[==================================|GoFinder V0.1|============================================]")
 	for _,value := range Lines{
 		new_url := URLadd+value

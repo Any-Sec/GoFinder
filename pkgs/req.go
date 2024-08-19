@@ -3,23 +3,45 @@ package pkgs
 import (
 	"fmt"
 	"net/http"
-	"os"
+	"strings"
+
+	
 )
 
-func GetRequest(url_addres string) InformationWebsite {
-	res, err := http.Get(url_addres)
-	if err != nil {
-		fmt.Printf("error making http request: %s", err)
-		os.Exit(1)
-	}
-	if res.StatusCode != 404{
-		return InformationWebsite{url: url_addres, StatusCode: res.StatusCode,Status: res.Status , Proto: res.Proto }	
-	}else{
-		return InformationWebsite{url: "", StatusCode: res.StatusCode, Status: "" , Proto: ""}
-	}
-	
+//Url check and fix that
+func CheckUrlAddress(url_addres string) (string,error)  {
 
+	if strings.HasSuffix(url_addres,"//") {
+		RemovedSlash := strings.TrimSuffix(url_addres,"/")
+		return RemovedSlash,nil
+		
+	};if strings.HasSuffix(url_addres, " "){
+		RemovedSpace := strings.Split(url_addres, " ")
+		return RemovedSpace[0],nil
+
+	};if !strings.HasSuffix(url_addres, "/"){
+		AddedSlash := fmt.Sprintf("%s%s",url_addres,"/")
+		return AddedSlash,nil
+	}
+	return url_addres , nil
 }
+
+
+
+func GetRequestToWebsite(url_addres string) (InformationWebsite,error) {
+	
+	con , err := http.Get(url_addres)
+	if err != nil {
+		return InformationWebsite{Status: "Error"} ,err
+	}
+	ReturnData := InformationWebsite{url: url_addres,StatusCode: con.StatusCode,Status: con.Status,Proto: con.Proto}
+	return ReturnData , nil
+}
+
+
+
+
+
 
 type InformationWebsite struct {
 	url string

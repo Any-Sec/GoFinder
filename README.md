@@ -1,5 +1,5 @@
 
-# GoFinder V0.1
+# GoFinder V0.6
 GoFinder is a **_CTF_ or _pentesting tool_** for directory enumeration. 
 
 ## Installation

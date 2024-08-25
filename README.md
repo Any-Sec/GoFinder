@@ -5,7 +5,7 @@ GoFinder is a **_CTF_ or _pentesting tool_** for directory enumeration.
 ## Installation
 1. Install the [GO](https://go.dev/doc/install)
 
-2. ```bash git clone https://github.com/Any-Sec/GoFinder.git ```
+2. ```bash git clone https://github.com/yavuzkanat/GoFinder.git ```
 
 
 ## Usage 

@@ -11,7 +11,7 @@ GoFinder is a **_CTF_ or _pentesting tool_** for directory enumeration.
 ## Usage 
 ```bash
 cd  GoFinder/
-go run main.go [URL] [FİLE_PATH] 
+go run main.go -url [URL] -file [FİLE_PATH] 
 go run main.go https://example.com/ /file/to/path
 ```
 

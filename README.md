@@ -34,6 +34,6 @@ Any actions and or activities related to the material contained within this repo
 
 ### V0.7
 
-* Add the flags (url & file)
-
+* New feature : helper menu & the flags 
+you can use the flags to make enumeration easy way.
 

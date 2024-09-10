@@ -2,15 +2,23 @@ package main
 
 import (
 	"enum/pkgs"
-	"os"
+	"flag"
+
 	
 )
 
 
 func main (){
-	UrlAdd:= os.Args[1]
-	FilePath:= os.Args[2]
-	NewUrl ,_ :=  pkgs.CheckUrlAddress(UrlAdd)
-	pkgs.InfosMenu(NewUrl,FilePath)
+	urlAddress := flag.String("url","","The target url address.")
+	FilePath := flag.String("file","","wordlist for enumeration")
+	flag.Parse()
+	if *urlAddress == "" || *FilePath == "" {
+		flag.Usage()
+	}else {
+		
+		NewUrl ,_ :=  pkgs.CheckUrlAddress(*urlAddress)
+		pkgs.InfosMenu(NewUrl,*FilePath)
+	}
+
 
 }

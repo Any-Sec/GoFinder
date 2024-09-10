@@ -34,6 +34,5 @@ Any actions and or activities related to the material contained within this repo
 
 ### V0.7
 
-* New feature : helper menu & the flags 
-you can use the flags to make enumeration easy way.
+* New feature : helper menu & the flags | You can use the flags to make enumeration easy way.
 
